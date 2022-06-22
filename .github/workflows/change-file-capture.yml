@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'dags/**'
+      - 'plugins/**'
 
 jobs:
   first_job:
@@ -21,10 +21,10 @@ jobs:
         uses: tj-actions/changed-files@v23
         with:
           files: |
-            dags/**
+            plugins/**
         
           files_ignore: |
-            dags/*.yml
+            plugins/*.yml
 
           separator: ","
 
