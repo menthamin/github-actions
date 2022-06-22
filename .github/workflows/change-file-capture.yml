@@ -35,5 +35,5 @@ jobs:
           host: ${{ secrets.AIRFLOW_HOST }}
           username: ${{ secrets.AIRFLOW_USER }}
           password: ${{ secrets.AIRFLOW_PASSWORD }}
-          source: "config/*"
+          source: ${{ steps.changed-files.outputs.all_changed_files }}
           target: "test"
