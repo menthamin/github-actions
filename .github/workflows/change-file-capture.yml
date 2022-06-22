@@ -1,4 +1,4 @@
-name: CI
+name: get changed files & scp remote target
 
 on:
   push:
