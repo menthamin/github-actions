@@ -22,7 +22,10 @@ jobs:
         with:
           files: |
             dags/**
-            !dags/*.yml
+        
+          files_ignore: |
+            dags/*.yml
+
           separator: ","
 
       - name: List all changed files
