@@ -1,16 +1,16 @@
-# name: scp files
-# on: [push]
-# jobs:
-#   build:
-#     name: scp
-#     runs-on: [self-hosted, linux, x64]
-#     steps:
-#     - uses: actions/checkout@master
-#     - name: copy file via ssh password
-#       uses: appleboy/scp-action@master
-#       with:
-#         host: ${{ secrets.AIRFLOW_HOST }}
-#         username: ${{ secrets.AIRFLOW_USER }}
-#         key: ${{ secrets.SSH_PRIVATE_KEY }}
-#         source: "config/*"
-#         target: "test"
+name: scp files
+on: [push]
+jobs:
+  build:
+    name: scp
+    runs-on: [self-hosted, linux, x64]
+    steps:
+    - uses: actions/checkout@master
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.AIRFLOW_HOST }}
+        username: ${{ secrets.AIRFLOW_USER }}
+        password: ${{ secrets.AIRFLOW_PASSWORD }}
+        source: "README.md"
+        target: "test"
